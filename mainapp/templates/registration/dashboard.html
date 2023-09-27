@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card bg-secondary">
+                <div class="card-header bg-success text-white">
+                    <h1 class="text-center">Dashboard</h1>
+                </div>
+                <div class="card-body fw-bold">
+                    <p>Hello, {{ request.user.username }}</p>
+                    <p>Welcome to your dashboard. Here's what you can do:</p>
+                    <ul>
+                        <li>View and manage your profile</li>
+                        <li>Change your <a href="{% url 'password_change' %}">password</a></li>
+                        <li>You can <a href="{% url 'logout' %}" class="text-danger">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
